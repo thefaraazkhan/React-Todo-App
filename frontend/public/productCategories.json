@@ -1,0 +1,12 @@
+{
+  "productCategoriesJson" : [
+      { "label": "SmartPhones (Apple, Samsung, Motorola, etc.)", "value": 1 },
+      { "label": "Laptops", "value": 2 },
+      { "label": "Computer Accessories (Speakers, Headphones, Keyboards, Webcams etc.)", "value": 3  },
+      { "label": "Electronic (TV, Playstation, Xbox, Printers, etc.)", "value": 4  },
+      { "label": "Appliances (Microwave, Refrigerator, dishwasher, etc.)", "value": 5 },
+      { "label": "Furniture (Table, Chair, Sofa, etc.)", "value": 6 },
+      { "label": "Books", "value": 7  },
+      { "label": "Others", "value": 8  }
+    ]
+  }

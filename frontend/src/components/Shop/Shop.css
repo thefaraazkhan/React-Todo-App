@@ -1,0 +1,76 @@
+.card {
+  margin: 0;
+  background: rgba(255, 255, 255, 1);
+  height: 366px;
+  width: 250px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 8px;
+  color: #000000;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.shop-img img {
+  width: 100%;
+  height: 209px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.heading-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 3px;
+}
+.shop-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 0 12px;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.category {
+  display: flex;
+  margin: 9px 0 0 9px;
+}
+.category > span {
+  background-color: #ececec;
+  padding: 4px 8px;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 3px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.phoneNumber {
+  font-size: 16px;
+  margin: 8px 0 0 12px;
+  text-align: left;
+  font-weight: 500;
+}
+.address {
+  font-size: 14px;
+  margin: 8px 10px 0 12px;
+  text-align: left;
+  font-weight: 500;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* for smart phones */
+@media (min-width: 320px) and (max-width: 480px) {
+}
+
+/* for tablets */
+@media (min-width: 320px) and (max-width: 480px) {
+}
+
+/* for desktops, laptops */
+@media (min-width: 320px) and (max-width: 480px) {
+}

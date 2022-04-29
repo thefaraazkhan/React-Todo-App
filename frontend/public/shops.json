@@ -1,0 +1,144 @@
+{
+  "shops": [
+    {
+      "id": "1",
+      "name": "Shop1123",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg",
+      "mainImg": "/images/cloths.jpg",
+      "products": [ 
+        {
+          "id": "1002",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 15
+        },
+        {
+          "id": "1003",
+          "name": "shirt",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 10
+        },
+        {
+          "id": "1004",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 20
+        },
+        {
+          "id": "1005",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 35
+        },
+        {
+          "id": "1006",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 25
+        },
+        {
+          "id": "1007",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 23
+        },
+        {
+          "id": "1008",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 22
+        },
+        {
+          "id": "1009",
+          "name": "Pant",
+          "price": 550,
+          "size": ["S", "M", "L", "XL"],
+          "category": ["Kids", "Pant"],
+          "photos": "/images/cloths.jpg",
+          "discount": 22
+        }
+      ]
+      
+    },
+    {
+      "id": "2",
+      "name": "Shop2",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Shop3",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Shop4",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    },
+    {
+      "id": "5",
+      "name": "Shop5",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    },
+    {
+      "id": "6",
+      "name": "Shop6",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Shop7",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    },
+    {
+      "id": "8",
+      "name": "Shop8",
+      "address": "A/555, Amrut Nagar, Near Gulab Park, Mumbra",
+      "phone": "+91 90000001",
+      "category": "men,women,kids",
+      "image": "/images/cloths.jpg"
+    }
+  ]
+}

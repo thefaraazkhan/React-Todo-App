@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+.admin-registration-body {
+  color: #fff;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-registration-form {
+  background-color: #1b569c;
+  padding: 20px 40px;
+  border-radius: 5px;
+  width: 430px;
+  height: auto;
+}
+
+.admin-registration-form {
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: lightblue;
+  cursor: pointer;
+}
+.link:hover {
+  color: rgb(111, 248, 93);
+}
+
+.admin-registration-btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: lightblue;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.admin-registration-btn:focus {
+  outline: 0;
+}
+
+.admin-registration-btn:active {
+  transform: scale(0.98);
+}
+
+.text {
+  margin-top: 30px;
+}
+
+.admin-registration-form-control {
+  position: relative;
+  margin: 10px 0;
+}
+
+.admin-registration-form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  outline: none;
+  color: #fff;
+}
+
+.admin-registration-single-line-form-control {
+  position: relative;
+
+  display: inline;
+}
+
+.margin-left-0 {
+  margin-left: 0 !important;
+}
+
+.margin-left-10-per {
+  margin-left: 15% !important;
+  margin-right: 0 !important;
+}
+
+.admin-registration-single-line-form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px lightblue solid;
+  display: inline-block;
+  width: 40%;
+  padding: 15px 0;
+  margin: 5%;
+  font-size: 18px;
+  color: #fff;
+  outline: none;
+}
+
+.admin-registration-single-line-form-control input::placeholder {
+  color: rgba(255, 255, 255, 0.548);
+}
+
+.admin-registration-form-control input:focus,
+.admin-registration-form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.admin-registration-form-control input::placeholder {
+  color: rgba(255, 255, 255, 0.548);
+}

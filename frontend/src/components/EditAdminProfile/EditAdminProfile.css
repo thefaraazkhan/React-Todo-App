@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+.shop-registration-body {
+  color: #fff;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.admin-dashboard-search-box {
+  position: absolute;
+  right: 9%;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+.shop-registration-form {
+  background-color: #1778c7;
+  padding: 20px 40px;
+  width: 430px;
+  height: auto;
+}
+.shop-registration-form input:not([type="checkbox"]) {
+  padding: 0;
+}
+
+.shop-registration-form input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-left: 10px;
+}
+.choose-file {
+  margin: 10px 0 0 0 !important;
+  cursor: pointer;
+}
+
+.shop-registration-form input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-left: 10px;
+}
+.choose-file {
+  margin: 10px 0 0 0 !important;
+  cursor: pointer;
+}

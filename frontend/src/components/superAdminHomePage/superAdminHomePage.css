@@ -1,0 +1,51 @@
+.inside-shop-search-box {
+    position: absolute;
+    right: 210px;
+    top: 0;
+  }
+  
+  .insideshop-shopname {
+    height: auto;
+    background-color: red;
+    text-align: center;
+  }
+  
+  .insideshop-address {
+    height: auto;
+    background-color: green;
+    text-align: center;
+  }
+  
+  /* for smart phones */
+  @media (min-width: 320px) and (max-width: 480px) {
+    .inside-shop-header {
+      height: 60px;
+    }
+  }
+  
+  /* for tablets */
+  @media (min-width: 481px) and (max-width: 768px) {
+  }
+  
+  /* for desktops, laptops */
+  @media (min-width: 769px) {
+    .insideshop-shopname {
+      height: 70px;
+      box-shadow: 0px -6px 3px 0px rgb(27, 86, 156);
+      background-color: rgb(255, 255, 255);
+      text-align: center;
+      overflow-wrap: break-word;
+      padding: 7px 0 7px 0;
+    }
+  
+    .insideshop-address {
+      height: 70px;
+      margin-top: 8px;
+      background-color: #ffffff;
+      text-align: center;
+      box-shadow: 0px -4px 3px 0px rgb(27, 86, 156);
+      overflow-wrap: break-word;
+      padding: 15px 0 15px 0;
+    }
+  }
+  

@@ -1,0 +1,26 @@
+.products-grid {
+  width: 80vw;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 50px auto;
+}
+/* for smart phones */
+@media (min-width: 320px) and (max-width: 480px) {
+  .products-grid {
+    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* for tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .products-grid {
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* for desktops, laptops */
+@media (min-width: 769px) {
+}

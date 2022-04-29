@@ -1,0 +1,9 @@
+{
+    "city" : [
+        { "label": "Mumbai", "value": 1 },
+        { "label": "Pune", "value": 2 },
+        { "label": "Banglore", "value": 3  },
+        { "label": "Delhi", "value": 4  },
+        { "label": "Hyderabad", "value": 5  }
+      ]
+    }

@@ -1,0 +1,119 @@
+.edit-product-container {
+  padding: 20px;
+  /* position: fixed; */
+  overflow: auto;
+  width: 40vw;
+  /* height: 400px; */
+  /* top: 100; */
+  /* bottom: 20px; */
+  /* left: 10vw; */
+  background-color: #1b569c;
+}
+.edit-price {
+  width: auto;
+  color: #000;
+}
+.side-a {
+  width: 35vw;
+}
+.side-b {
+  width: 35vw;
+}
+
+.edit-product-form {
+  padding: 0;
+  width: auto;
+  height: 55vh;
+      
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.select-color{
+  color: #000;
+}
+
+.product-main-info-box {
+  width: 100%;
+  height: auto;
+  background-color: rgb(149, 228, 202);
+  text-align: center;
+}
+
+.nect-type,
+.sleeve-type,
+.fabric,
+.pattern,
+.ideal-for,
+.fit-type {
+  margin-top: 20px;
+}
+.save-close {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  border-radius: 0 !important;
+}
+
+.product-description-box {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  column-gap: 10px;
+  row-gap: 15px;
+  height: auto;
+  width: 100%;
+}
+
+.c {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.add-product-form h1 {
+  text-align: center;
+}
+
+.add-product-form .add-product-close-button {
+  display: inline-block;
+  width: 5px;
+}
+#root > div > div.main-container > div:nth-child(1) > div > div > form > div > div:nth-child(3) > label{
+  font-weight: 500;
+}
+#root > div > div.main-container > div:nth-child(1) > div > div > form > div > div:nth-child(3){
+  display: flex;
+  flex-direction: column;
+}
+#root > div > div.main-container > div:nth-child(1) > div > div > form > div > div:nth-child(4){
+  display: flex;
+  flex-direction: column;
+  margin: 10px  0 10px 0;
+}
+#root > div > div.main-container > div:nth-child(1) > div > div > form > div > div:nth-child(4) > label{
+  font-weight: 500;
+}
+#root > div > div.main-container > div:nth-child(1) > div > div > form > div > div:nth-child(5){
+  margin: 20px  0 20px 0;
+}
+#root > div > div.main-container > div:nth-child(1) > div > div > form > div > div:nth-child(6){
+  margin: 20px  0 20px 0;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .add-product-container {
+    position: fixed;
+  }
+
+  .add-product-form {
+    width: 50vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+  }
+}
