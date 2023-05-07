@@ -1,5 +1,5 @@
 import "./Shop.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Shop = (props) => {
   const history = useHistory();

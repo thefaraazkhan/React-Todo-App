@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom";
 import axios from 'axios';
 import { API_URL } from "../../config";
 
-const Product = ({ product, productId, shopName, shopId, productCategory, expectedItem, stock }) => {
+// const Product = ({ product, productId, shopName, shopId, productCategory, expectedItem, stock }) => {
+const Product = ({ product, productId, shopId, productCategory, expectedItem }) => {
   const history = useHistory();
 
   const viewProductForUser = async () => {
@@ -27,6 +28,7 @@ const Product = ({ product, productId, shopName, shopId, productCategory, expect
           data: { productId: pId },
         })
         .then(window.alert("Product deleted successfully"));
+      console.log(resp)
       window.location.reload(false)
     }
   };

@@ -10,7 +10,7 @@ import ChatContainer from "../components/ChatContainer";
 import Contacts from "../components/Contacts";
 import Welcome from "../components/Welcome";
 
-import { setAuthentication, isAuthenticated } from "../../src/helpers/auth";
+// import { setAuthentication, isAuthenticated } from "../../src/helpers/auth";
 import { API_URL } from "../config";
 
 export default function Chat() {
@@ -50,7 +50,7 @@ export default function Chat() {
 
   const result = queryString.parse(location.search);
   const ShopId = result.shopId;
-  const productID = result.productId;
+  // const productID = result.productId;
 
   useEffect(async () => {
     const defaultChat = await axios.get(`${API_URL}/api/adminRegister/${ShopId}`)

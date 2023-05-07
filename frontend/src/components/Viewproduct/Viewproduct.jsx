@@ -6,8 +6,8 @@ import "./Viewproduct.css";
 import axios from "axios";
 import { API_URL } from "../../config";
 import { io } from "socket.io-client";
-import { sendMessageRoute, recieveMessageRoute } from "../../utils/APIRoutes";
-import { allUsersRoute, host } from "../../utils/APIRoutes";
+// import { sendMessageRoute, recieveMessageRoute } from "../../utils/APIRoutes";
+// import { allUsersRoute, host } from "../../utils/APIRoutes";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -75,10 +75,12 @@ const Viewproduct = () => {
     return singleShop;
   };
 
+
+
   //product id and shop id which are passed by product component using useHistory hook in search which can be accessed by useLocation hook
 
   const pr = location.search;
-  const result = queryString.parse(location.search);
+  const result = queryString.parse(pr);
   const ShopId = result.shopId;
   const productID = result.productId;
 
@@ -93,6 +95,8 @@ const Viewproduct = () => {
     localStorage.getItem('admin')
   );
 
+  const sendMessageRoute = `${API_URL}/api/messages/addmsg`;
+
 
   const chatBtnHandler = async () => {
 
@@ -103,7 +107,7 @@ const Viewproduct = () => {
       // const allContacts = await axios.get(`${allUsersRoute}/${loggedUser._id}`);
       // setContacts(allContacts?.data);    
       console.log("loooooooooooooo", ShopId)
-      const didText = await axios.post(recieveMessageRoute, {
+      const didText = await axios.post(`${API_URL}/api/messages/getmsg`, {
         from: loggedUser._id,
         to: ShopId,
       });
@@ -167,6 +171,8 @@ const Viewproduct = () => {
     localStorage.getItem('admin')
   );
 
+
+
   const obj = {
     to: ShopId,
     from: LS?._id,
@@ -175,8 +181,9 @@ const Viewproduct = () => {
 
   useEffect(() => {
     const gt = async () => {
-      const getResult = await axios.get(`/api/approve-request?to=${ShopId}&from=${LS?._id}&productID=${productID}`);
+      const getResult = await axios.get(`${API_URL}/api/approve-request?to=${ShopId}&from=${LS?._id}&productID=${productID}`);
       const user = getResult.data[0];
+      console.log("THis is whatx i want", user)
       // console.log(getResult.data[0], "getResult.data[0]")
       // getResult ? setIsRequested()
       if (getResult.data) {
@@ -189,6 +196,7 @@ const Viewproduct = () => {
     }
     // console.log('isRequested',JSON.stringify(isRequested,null,2));
     gt();
+    console.log("this is user", LS)
   }, []);
 
 
@@ -379,6 +387,9 @@ const Viewproduct = () => {
             {singleProduct.expectedItem && <h4>Expected Item : {singleProduct.expectedItem}</h4>}
 
             {singleProduct.city && <h4>City : {singleProduct.city}</h4>}
+
+
+            {/* {LS.firstName && <h4>Posted By : {LS.firstName}</h4>} */}
 
             {singleProduct.pattern && (
               <h4>Pattern : {singleProduct.pattern}</h4>
