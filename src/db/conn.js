@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 const sa = process.env.DB_URL;
+
+console.log('your connection string ---:', sa);
 
 mongoose
   .connect(sa, {
