@@ -1,11 +1,9 @@
-require('dotenv').config();
-// const dev = process.env.NODE_ENV !== 'production';
-const dev = true;
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+const dev = process.env.NODE_ENV !== 'production';
+console.log(dev);
 
-export const backendUrl = dev
-  ? 'http://localhost:3000'
-  : 'https://local-shopping-app.vercel.app';
+export const backendUrl = 'https://swapify-tau.vercel.app/';
 
-export const API_URL = dev
-  ? 'http://localhost:8000'
-  : 'https://localshopping.azurewebsites.net';
+export const API_URL = 'https://swapify-backend.onrender.com';
