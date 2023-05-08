@@ -3,8 +3,8 @@ import "./EditProduct.css";
 import isEmpty from "validator/lib/isEmpty";
 import axios from "axios";
 import Select from 'react-select';
-import { showErrorMsg } from "../../helpers/message";
-import { API_URL } from "../../config";
+// import { showErrorMsg } from "../../helpers/message";
+// import { API_URL } from "../../config";
 
 const EditProduct = (props) => {
 
@@ -157,7 +157,7 @@ const EditProduct = (props) => {
           onSubmit={submithandler}
           className="edit-product-form"
           encType="multipart/form-data">
-            {/* <span style={{fontSize: "18px", color: "black"}}>Edit product</span> */}
+          {/* <span style={{fontSize: "18px", color: "black"}}>Edit product</span> */}
           <div className="side-a">
             <div className="f">
               <input

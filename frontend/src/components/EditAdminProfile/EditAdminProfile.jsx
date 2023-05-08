@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./EditAdminProfile.css";
-import adminShopRegisterAPI from "../../api/adminShopRegisterApi"
+// import adminShopRegisterAPI from "../../api/adminShopRegisterApi"
 import isEmpty from "validator/lib/isEmpty";
 import axios from "axios";
-import { showErrorMsg, showSuccessMsg } from "../../helpers/message";
-import { circularLoading } from "../../helpers/loading";
+// import { showErrorMsg, showSuccessMsg } from "../../helpers/message";
+// import { circularLoading } from "../../helpers/loading";
 import { API_URL } from "../../config";
 
 const EditAdminProfile = () => {
@@ -13,20 +13,21 @@ const EditAdminProfile = () => {
 
   const [formEditBtn, setFormEditBtn] = useState(true);
 
-const [singleAdmin, setSingleAdmin] = useState({});
-const [checkImage, setCheckImage] = useState();
-const [adminShopImage, setAdminShopImage] = useState();
-// const [shop, setShop] = useState({
-//     // shopname: "",
-//     address: "",
-//     landmark: "",
-//     city: "",
-//     pincode: "",
-//     phone: "",
-//     successMsg: false,
-//     errorMsg: false,
-//     loading: false,
-//   });
+  const [singleAdmin, setSingleAdmin] = useState({});
+  const [userData, setUserData] = useState({});
+  const [checkImage, setCheckImage] = useState();
+  const [adminShopImage, setAdminShopImage] = useState();
+  // const [shop, setShop] = useState({
+  //     // shopname: "",
+  //     address: "",
+  //     landmark: "",
+  //     city: "",
+  //     pincode: "",
+  //     phone: "",
+  //     successMsg: false,
+  //     errorMsg: false,
+  //     loading: false,
+  //   });
 
   useEffect(() => {
     const getAdminShop = async () => {
@@ -46,12 +47,31 @@ const [adminShopImage, setAdminShopImage] = useState();
     return admin;
   };
 
-  const {address, landmark, city, pincode, phone} = singleAdmin;
+  const fetchUser = async () => {
+    const response = await axios.get(`${API_URL}/api/products/user/${_id}`);
+    const userData = response.data;
+    console.log("User Datraaaa inside fn", userData)
+    setUserData(userData)
+    // const adminProducts = products;
+    return userData;
+  };
+
+  useEffect(() => {
+    const userDa = fetchUser()
+    console.log("User Datraaaa inside useEffect", userDa)
+  }, [])
+
+
+
+
+  console.log(singleAdmin)
+
+  const { address, landmark, city, pincode, phone } = singleAdmin;
 
   // const [editAdmin, setEditAdmin] = useState(singleAdmin);
 
-// console.log(editAdmin, "sssssss")
-  
+  // console.log(editAdmin, "sssssss")
+
 
   const editFormhandler = (e) => {
     setSingleAdmin({
@@ -77,10 +97,10 @@ const [adminShopImage, setAdminShopImage] = useState();
   //   loading: false,
   // });
 
-  
+
   // console.log('asdfasdf', adminShopImage)
 
-  
+
 
 
   //Object destructure
@@ -101,7 +121,7 @@ const [adminShopImage, setAdminShopImage] = useState();
   // shopInfo.append("category", shopCategory);
   shopInfo.append("adminShopImage", adminShopImage);
 
-  
+
 
   // Shop info form handler
   // const shopInfoHandler = (e) => {
@@ -126,7 +146,7 @@ const [adminShopImage, setAdminShopImage] = useState();
       setAdminShopImage(file);
     }
 
-    
+
     // setShop({
     //   ...shop,
     //   successMsg: "",
@@ -138,8 +158,8 @@ const [adminShopImage, setAdminShopImage] = useState();
   const submithandler = async (e) => {
     e.preventDefault();
 
-     if (isEmpty(address)) {
-       window.alert("please enter your shop address");
+    if (isEmpty(address)) {
+      window.alert("please enter your shop address");
       // setSingleAdmin({
       //   ...singleAdmin,
       //   errorMsg: "please enter your shop address",
@@ -157,21 +177,21 @@ const [adminShopImage, setAdminShopImage] = useState();
       //   errorMsg: "please enter your city name",
       // });
     }
-    else if (pincode.length>6) {
+    else if (pincode.length > 6) {
       window.alert("pincode should have maximum 6 digits");
       // setSingleAdmin({
       //   ...singleAdmin,
       //   errorMsg: "please enter pincode",
       // });
     }
-     else if (phone.length>10) {
+    else if (phone.length > 10) {
       window.alert("phone number should have maximum 10 digits");
       // setSingleAdmin({
       //   ...singleAdmin,
       //   errorMsg: "please enter pincode",
       // });
     }
-     else {
+    else {
       await axios
         .patch(`/api/adminShop/`, shopInfo)
         .then((response) => {
@@ -187,21 +207,21 @@ const [adminShopImage, setAdminShopImage] = useState();
   };
 
   useEffect(() => {
-    const inputs = document.getElementsByTagName("input"); 
-    for (var i = 0; i < inputs.length; i++) { 
-        inputs[i].disabled = formEditBtn;
-    } 
-   
+    const inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].disabled = formEditBtn;
+    }
+
   }, [formEditBtn]);
 
-    const editBtnLogic = () =>{
-      setFormEditBtn(false);
-      const inputs = document.getElementsByTagName("input"); 
-      for (var i = 0; i < inputs.length; i++) { 
-        inputs[i].disabled = false;
-        inputs[1].focus();
-    } 
+  const editBtnLogic = () => {
+    setFormEditBtn(false);
+    const inputs = document.getElementsByTagName("input");
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].disabled = false;
+      inputs[1].focus();
     }
+  }
 
   return (
     <>
@@ -212,9 +232,15 @@ const [adminShopImage, setAdminShopImage] = useState();
           {errorMsg && showErrorMsg(errorMsg)} */}
 
           <h3>Edit Profile</h3>
+
           <br />
+
+          <div className='user-data-fname'>
+            <h4> Hi {userData.firstName}</h4>
+          </div>
+
           <div className="admin-registration-form-control">
-          <label>
+            <label>
               <b>Upload profile photo</b>
             </label>
             <input
@@ -225,10 +251,10 @@ const [adminShopImage, setAdminShopImage] = useState();
             />
             <br />
             <br />
-            <img src={checkImage} style={{width: "100px", height: "100px", borderRadius: "50%"}} alt=""/>
+            <img src={checkImage} style={{ width: "100px", height: "100px", borderRadius: "50%" }} alt="" />
 
 
-          <input
+            <input
               type="text"
               placeholder="address"
               name="address"
@@ -271,7 +297,7 @@ const [adminShopImage, setAdminShopImage] = useState();
             />
             <br />
             <br />
-            
+
 
             <input
               type="number"
@@ -282,7 +308,7 @@ const [adminShopImage, setAdminShopImage] = useState();
             />
             <br />
             <br />
-            
+
             {formEditBtn && <button
               type="submit"
               className="shop-info-save-btn admin-registration-btn"

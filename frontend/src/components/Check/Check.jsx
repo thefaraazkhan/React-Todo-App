@@ -11,9 +11,9 @@ const Check = () => {
     setImages(imageList);
   };
 
-  const err = () => {
-    window.alert(err)
-  }
+  // const err = () => {
+  //   window.alert(err)
+  // }
 
   return (
     <div className="App">

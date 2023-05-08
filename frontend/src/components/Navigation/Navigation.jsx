@@ -1,7 +1,7 @@
 import "./Navigation.css";
 import { useState, useEffect } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
-import { adminLogOut, isAuthenticated } from "../../helpers/auth";
+import { Link, useHistory } from "react-router-dom";
+import { adminLogOut } from "../../helpers/auth";
 
 const Navigation = () => {
   const [LS, setLS] = useState(false);

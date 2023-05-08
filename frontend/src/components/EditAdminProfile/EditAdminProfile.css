@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 .shop-registration-body {
   color: #fff;
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,11 +22,11 @@
   width: 430px;
   height: auto;
 }
-.shop-registration-form input:not([type="checkbox"]) {
+.shop-registration-form input:not([type='checkbox']) {
   padding: 0;
 }
 
-.shop-registration-form input[type="checkbox"] {
+.shop-registration-form input[type='checkbox'] {
   display: inline-block;
   width: auto;
   margin-left: 10px;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-.shop-registration-form input[type="checkbox"] {
+.shop-registration-form input[type='checkbox'] {
   display: inline-block;
   width: auto;
   margin-left: 10px;
@@ -44,4 +44,9 @@
 .choose-file {
   margin: 10px 0 0 0 !important;
   cursor: pointer;
+}
+
+.user-data-fname {
+  padding-top: 5px;
+  border-top: 2px solid #fff;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 import Search from "../../components/Search/Search";
-import { Shop } from "../Shop/Shop";
+// import { Shop } from "../Shop/Shop";
 import "./InsideShop.css";
 import Products from "../Products/Products";
 import axios from "axios";
@@ -30,11 +30,11 @@ const InsideShop = () => {
   };
 
   //shop id which is passed by shop component using useHistory hook in search which can be accessed by useLocation hook
-  const s = location.search;
+  // const s = location.search;
   const result = queryString.parse(location.search);
   const shopID = result.shopId;
 
-  const filterProductsForUser = shop?.products?.filter((product, idx) =>
+  const filterProductsForUser = shop?.products?.filter((product) =>
     product?.productname
       ?.toLowerCase()
       .includes(userSearchProductText.toLowerCase())

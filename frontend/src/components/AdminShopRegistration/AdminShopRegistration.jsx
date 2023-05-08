@@ -5,7 +5,7 @@ import adminShopRegisterAPI from "../../api/adminShopRegisterApi"
 import isEmpty from "validator/lib/isEmpty";
 import axios from "axios";
 import { showErrorMsg, showSuccessMsg } from "../../helpers/message";
-import { circularLoading } from "../../helpers/loading";
+// import { circularLoading } from "../../helpers/loading";
 import { API_URL } from "../../config";
 
 const AdminShopRegistration = () => {
@@ -33,7 +33,7 @@ const AdminShopRegistration = () => {
   // const [shopCategory, setShopCategory] = useState([]);
 
   //Object destructure
-  const { address, landmark, city, pincode, phone, successMsg, errorMsg, loading } = shop;
+  const { address, landmark, city, pincode, phone, successMsg, errorMsg } = shop;
 
   const getAdminFromLS = JSON.parse(localStorage.getItem("admin"));
   const { _id } = getAdminFromLS;
@@ -59,32 +59,32 @@ const AdminShopRegistration = () => {
       errorMsg: "",
     });
   };
-console.log(adminInfo);
+  console.log(adminInfo);
   // Shop category handler
   // const shopCategoryHandler = (e) => {
-    // check if the check box is checked or unchecked
-    // if (e.target.checked) {
-    //   shopCategory.push(e.target.value);
-    // } else {
-    //   const index = shopCategory.indexOf(e.target.value);
-    //   shopCategory.splice(index, 1);
-    // }
+  // check if the check box is checked or unchecked
+  // if (e.target.checked) {
+  //   shopCategory.push(e.target.value);
+  // } else {
+  //   const index = shopCategory.indexOf(e.target.value);
+  //   shopCategory.splice(index, 1);
+  // }
 
-    // update the state with the new array
-    // setShopCategory([...shopCategory]);
+  // update the state with the new array
+  // setShopCategory([...shopCategory]);
 
-    // setShop({
-    //   ...shop,
-    //   successMsg: "",
-    //   errorMsg: "",
-    // });
+  // setShop({
+  //   ...shop,
+  //   successMsg: "",
+  //   errorMsg: "",
+  // });
   // };
 
-  useEffect(async() => {
+  useEffect(async () => {
     const response = await axios.get(`${API_URL}/api/adminShop/${_id}`);
     setAdminInfo(response.data[0]);
   }, [])
-  
+
 
   // Shop image handler
   const ShopImageHandler = (e) => {
@@ -97,15 +97,15 @@ console.log(adminInfo);
 
       const file = e.target.files[0];
 
-    setShopImage(file);
-    setShop({
-      ...shop,
-      successMsg: "",
-      errorMsg: "",
-    });
+      setShopImage(file);
+      setShop({
+        ...shop,
+        successMsg: "",
+        errorMsg: "",
+      });
     }
 
-    
+
   };
 
   // shop submit handler
@@ -118,9 +118,9 @@ console.log(adminInfo);
     //     errorMsg: "please enter your shop name",
     //   });
     // }
-    const re = /^[0-9\b]+$/;
+    // const re = /^[0-9\b]+$/;
 
-     if (isEmpty(address)) {
+    if (isEmpty(address)) {
       setShop({
         ...shop,
         errorMsg: "please enter your shop address",
@@ -135,13 +135,13 @@ console.log(adminInfo);
         ...shop,
         errorMsg: "please enter your city name",
       });
-    }else if (pincode.length>6) {
+    } else if (pincode.length > 6) {
       window.alert("pincode should have maximum 6 digits");
       // setShop({
       //   ...shop,
       //   errorMsg: "please enter pincode",
       // });
-    }else if (phone.length>10) {
+    } else if (phone.length > 10) {
       window.alert("phone number should have maximum 10 digits");
       // setShop({
       //   ...shop,
@@ -160,10 +160,10 @@ console.log(adminInfo);
     //     errorMsg: "please mark your shop category",
     //   });
     // }
-     else {
+    else {
       await axios
-        // .post(`${API_URL}/api/adminShop`, shopInfo)
-        adminShopRegisterAPI(shopInfo)
+      // .post(`${API_URL}/api/adminShop`, shopInfo)
+      adminShopRegisterAPI(shopInfo)
         .then((response) => {
           response.data.successMessage && history.push("/dashboard");
 
@@ -187,7 +187,7 @@ console.log(adminInfo);
           <h3>Profile</h3>
           <br />
           <div className="admin-registration-form-control">
-          <label>
+            <label>
               <b>Upload profile photo</b>
             </label>
             <input
@@ -198,11 +198,11 @@ console.log(adminInfo);
             />
             <br />
             <br />
-            <img src={checkImage} style={{width: "100px", height: "100px", borderRadius: "50%"}} alt="saalim"/>
-            <span className="hello-username" style={{marginLeft: "15px", fontSize: "20px"}}>Hello {adminInfo?.firstName} {adminInfo?.lastName}</span>
+            <img src={checkImage} style={{ width: "100px", height: "100px", borderRadius: "50%" }} alt="saalim" />
+            <span className="hello-username" style={{ marginLeft: "15px", fontSize: "20px" }}>Hello {adminInfo?.firstName} {adminInfo?.lastName}</span>
 
 
-          <input
+            <input
               type="text"
               placeholder="address"
               name="address"
@@ -258,7 +258,7 @@ console.log(adminInfo);
             <br />
             <br /> */}
 
-            
+
 
             <input
               type="number"
@@ -302,7 +302,7 @@ console.log(adminInfo);
               />
               <br />
             </div> */}
-            
+
 
             <button
               type="submit"
