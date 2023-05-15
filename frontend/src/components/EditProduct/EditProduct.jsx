@@ -5,6 +5,7 @@ import axios from "axios";
 import Select from 'react-select';
 // import { showErrorMsg } from "../../helpers/message";
 // import { API_URL } from "../../config";
+import { backendUrl } from "../../config"
 
 const EditProduct = (props) => {
 
@@ -29,7 +30,7 @@ const EditProduct = (props) => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:3000/productCategories.json`)
+    fetch(`${backendUrl}/productCategories.json`)
       .then((r) => r.json())
       .then((data) => {
         setProductCategoriesJson(data.productCategoriesJson)
@@ -37,7 +38,7 @@ const EditProduct = (props) => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/city.json`)
+    fetch(`${backendUrl}/city.json`)
       .then((r) => r.json())
       .then((data) => {
         setCityJson(data.city)

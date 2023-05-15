@@ -6,7 +6,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const sa = process.env.DB_URL;
 
-console.log('your connection string ---:', sa);
+// console.log('your connection string ---:', sa);
 
 mongoose
   .connect(sa, {

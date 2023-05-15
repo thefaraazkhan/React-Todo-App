@@ -6,6 +6,7 @@ import "./Products.css";
 import Search from "../../components/Search/Search";
 import Select from 'react-select';
 import { setAuthentication, isAuthenticated } from "../../helpers/auth";
+import { backendUrl } from "../../config"
 
 const Products = ({ adminsData, shopName, shopId }) => {
   const [LS, setLS] = useState(false);
@@ -32,6 +33,7 @@ const Products = ({ adminsData, shopName, shopId }) => {
   }, [adminsData])
 
   useEffect(() => {
+    console.log(allProducts)
     const ls = JSON.parse(localStorage.getItem('admin'));
     setLS(ls);
     if (ls) {
@@ -87,8 +89,9 @@ const Products = ({ adminsData, shopName, shopId }) => {
     withoutCategoryFilter = filterShop;
   }
 
+
   useEffect(() => {
-    fetch(`http://localhost:3000/city.json`)
+    fetch(`${backendUrl}/city.json`)
       .then((r) => r.json())
       .then((data) => {
         setCityJson(data.city)
@@ -96,7 +99,7 @@ const Products = ({ adminsData, shopName, shopId }) => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/productCategories.json`)
+    fetch(`${backendUrl}/productCategories.json`)
       .then((r) => r.json())
       .then((data) => {
         setProductCategoriesJson(data.productCategoriesJson)
@@ -126,31 +129,43 @@ const Products = ({ adminsData, shopName, shopId }) => {
 
       </div>
 
-      {flp && flp?.map(product => {
-        if (LS?.isAdmin === true && product.stock === "In stock") {
-          return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
-        }
-      })}
+      {
+        !localStorage.getItem('admin') && <div style={{ fontSize: "38px", display: "flex", width: "80vw", justifyContent: "center" }}>
+          <h1 >Log in to see products</h1>
+        </div>
+      }
 
-      {flp && flp?.map(product => {
-        if (LS?.isSuperAdmin === true) {
-          return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
-        }
-      })}
+      {
+        flp && flp?.map(product => {
+          if (LS?.isAdmin === true && product.stock === "In stock") {
+            return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
+          }
+        })
+      }
+
+      {
+        flp && flp?.map(product => {
+          if (LS?.isSuperAdmin === true) {
+            return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
+          }
+        })
+      }
 
 
-      {withoutCategoryFilter && withoutCategoryFilter?.map(product => {
-        if (LS?.isAdmin === true && product.stock === "In stock") {
-          return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
+      {
+        withoutCategoryFilter && withoutCategoryFilter?.map(product => {
+          if (LS?.isAdmin === true && product.stock === "In stock") {
+            return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
 
-        }
+          }
 
-        if (LS?.isSuperAdmin === true) {
-          return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
+          if (LS?.isSuperAdmin === true) {
+            return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
 
-        }
-      })}
-    </div>
+          }
+        })
+      }
+    </div >
   );
 };
 

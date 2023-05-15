@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Select from 'react-select';
 import isEmpty from "validator/lib/isEmpty";
 import "./AddProduct.css";
+import { backendUrl } from "../../config"
 
 import axios from "axios";
 import { showErrorMsg } from "../../helpers/message";
@@ -173,7 +174,7 @@ const AddProduct = (props) => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/productCategories.json`)
+    fetch(`${backendUrl}/productCategories.json`)
       .then((r) => r.json())
       .then((data) => {
         setProductCategoriesJson(data.productCategoriesJson)
@@ -181,7 +182,7 @@ const AddProduct = (props) => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/city.json`)
+    fetch(`${backendUrl}/city.json`)
       .then((r) => r.json())
       .then((data) => {
         setCityJson(data.city)
