@@ -33,8 +33,13 @@ const Products = ({ adminsData, shopName, shopId }) => {
   }, [adminsData])
 
   useEffect(() => {
-    console.log(allProducts)
+
     const ls = JSON.parse(localStorage.getItem('admin'));
+    // console.log(allProducts[3].adminId === ls._id)
+    // console.log(ls)
+    // console.log(allProducts[2])
+    // console.log(allProducts[2].adminId !== ls._id)
+
     setLS(ls);
     if (ls) {
       if (ls && ls.isAdmin === true && ls.isSuperAdmin === false) {
@@ -137,7 +142,7 @@ const Products = ({ adminsData, shopName, shopId }) => {
 
       {
         flp && flp?.map(product => {
-          if (LS?.isAdmin === true && product.stock === "In stock") {
+          if (LS?.isAdmin === true && product.stock === "In stock" && product.adminId !== LS._id) {
             return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
           }
         })
@@ -154,9 +159,10 @@ const Products = ({ adminsData, shopName, shopId }) => {
 
       {
         withoutCategoryFilter && withoutCategoryFilter?.map(product => {
-          if (LS?.isAdmin === true && product.stock === "In stock") {
-            return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
-
+          if (product.adminId !== LS._id) {
+            if (LS?.isAdmin === true && product.stock === "In stock") {
+              return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
+            }
           }
 
           if (LS?.isSuperAdmin === true) {

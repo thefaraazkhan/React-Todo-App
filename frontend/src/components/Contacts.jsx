@@ -23,7 +23,7 @@ export default function Contacts({ contacts, changeChat }) {
   }, []);
 
   useEffect(() => {
-
+    console.log("Contacts any", contacts[0])
   }, [])
 
 
@@ -63,7 +63,7 @@ export default function Contacts({ contacts, changeChat }) {
       <Container>
         <div className="brand">
           {/* <img src={Logo} alt="logo" /> */}
-          <h3>Chats</h3>
+          <h3>Your Chats</h3>
         </div>
         <div className="contacts">
           {contacts.map((contact, index) => {
@@ -88,14 +88,14 @@ export default function Contacts({ contacts, changeChat }) {
           })}
         </div>
         <div className="current-user">
-          <div className="avatar">
+          {/* <div className="avatar">
             <img
-              // src={`data:image/svg+xml;base64,${currentUserImage}`}
+              src={`data:image/svg+xml;base64,${currentUserImage}`}
               alt="avatar"
             />
-          </div>
+          </div> */}
           <div className="username">
-            <h2>{currentUserName}</h2>
+            <h2>Hi {currentUserName}</h2>
           </div>
         </div>
       </Container>

@@ -96,7 +96,7 @@ const Navigation = () => {
         </ul>
       </nav>
       <div className="nav-h1">
-        <span>Exchange of Goods</span>
+        <span>Swapify</span>
         <div className="web-nav">
           <div>
             <Link to="/" onClick={reloadFunction}>Home</Link>
