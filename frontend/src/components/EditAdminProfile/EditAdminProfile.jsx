@@ -64,7 +64,7 @@ const EditAdminProfile = () => {
 
 
 
-  console.log(singleAdmin)
+  // console.log(singleAdmin)
 
   const { address, landmark, city, pincode, phone } = singleAdmin;
 
@@ -108,7 +108,6 @@ const EditAdminProfile = () => {
 
   const getAdminFromLS = JSON.parse(localStorage.getItem("admin"));
   const { _id } = getAdminFromLS;
-  console.log(adminShopImage, "ShopImage???")
   //Object which will pass through post request
   const shopInfo = new FormData();
   shopInfo.append("adminId", _id);
@@ -241,7 +240,7 @@ const EditAdminProfile = () => {
 
           <div className="admin-registration-form-control">
             <label>
-              <b>Upload profile photo</b>
+              {!formEditBtn && <b>Upload profile photo</b>}
             </label>
             <input
               className="choose-file"

@@ -159,7 +159,7 @@ const Products = ({ adminsData, shopName, shopId }) => {
 
       {
         withoutCategoryFilter && withoutCategoryFilter?.map(product => {
-          if (product.adminId !== LS._id) {
+          if (LS?._id && product.adminId !== LS._id) {
             if (LS?.isAdmin === true && product.stock === "In stock") {
               return <Product key={product._id} productId={product._id} stock={product.stock} productCategory={product.productCategory} product={product} expectedItem={product.expectedItem} shopId={product.adminId} />
             }
